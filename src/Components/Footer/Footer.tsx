@@ -4,6 +4,7 @@ import { FaFacebookF } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
+import Link from 'next/link';
 
 const Footer: React.FC = () => {
   return (
@@ -36,10 +37,10 @@ const Footer: React.FC = () => {
           <h3 className='font-semibold text-xl'>Follow Us</h3>
           <p>Stay connected with us for updates, special offers, and more!</p>
           <div className="social-icons">
-            <a href="/"><FaFacebookF /></a>
-            <a href="/"><FaInstagram /></a>
-            <a href="/"><FaXTwitter /></a>
-            <a href="/"><FaLinkedinIn /></a>
+            <Link href="/"><FaFacebookF /></Link>
+            <Link href="/"><FaInstagram /></Link>
+            <Link href="/"><FaXTwitter /></Link>
+            <Link href="/"><FaLinkedinIn /></Link>
           </div>
         </div>
 

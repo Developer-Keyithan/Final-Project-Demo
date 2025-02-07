@@ -2,10 +2,6 @@ import React, { useState } from 'react';
 import './Login.css';
 import { MdOutlineLogin } from "react-icons/md";
 import { FaGoogle, FaFacebook, FaApple, FaTiktok } from "react-icons/fa";
-import { TiHome } from "react-icons/ti";
-import { HiMiniShoppingBag } from "react-icons/hi2";
-import { RiMoonClearFill } from "react-icons/ri";
-import Toggle from '../../Components/Toggle/Toggle';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import axios from 'axios';
@@ -20,7 +16,7 @@ const Login: React.FC = () => {
     const [emailOrMobileNumber, setEmailOrMobileNumber] = useState('');
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
-    const [isLoading, setIsLoading] = useState(false);
+    const isLoading= false
 
     const handleShowPassword = () => setShowPassword(!showPassword);
 
@@ -86,9 +82,9 @@ const Login: React.FC = () => {
             console.log(response)
 
 
-        } catch (error: any) {
+        } catch (error) {
             toast.error(
-                error.response?.data?.error || "Something went wrong. Please try again.",
+                "Something went wrong. Please try again.",
                 {
                     style: {
                         width: '500px',
@@ -157,7 +153,7 @@ const Login: React.FC = () => {
                             <button className="login-api"><FaTiktok /></button>
                         </div>
                     </div>
-                    <p>Don't have an account? <Link href="/signup">Sign Up</Link></p>
+                    <p>Do not have an account? <Link href="/signup">Sign Up</Link></p>
                 </div>
             </div>
             <Footer />

@@ -2,11 +2,11 @@ import { NextRequest, NextResponse } from "next/server";
 import User from "../../../../lib/Models/User";
 import DBconnect from "../../../../lib/db";
 import bcrypt from 'bcrypt';
-import jwt, { sign } from 'jsonwebtoken';
+import jwt from 'jsonwebtoken';
 
 const JWT_SECRET = process.env.SECRET_KEY;
 
-const generateToken = (user: any) => {
+const generateToken = (user: { _id: string; email: string; userType: string }) => {
   return jwt.sign({ id: user._id, email: user.email, userType: user.userType }, JWT_SECRET!, { expiresIn: 15552000 });
 };
 

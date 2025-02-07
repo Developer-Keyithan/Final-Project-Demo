@@ -1,5 +1,4 @@
 import './CardsCart.css';
-// import sampleData from '../../Data/CardData';
 import visa from '../../Assets/visa-card.png';
 import master from '../../Assets/master-card.png';
 

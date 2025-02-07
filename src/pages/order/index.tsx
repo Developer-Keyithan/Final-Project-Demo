@@ -32,11 +32,10 @@ function OrderPage() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
     const [userId, setUserId] = useState<string>('');
-    const [addresses, setAddresses] = useState<any[]>([]);
-    const [selectedAddress, setSelectedAddress] = useState<any>({});
-    const [cards, setCards] = useState<any[]>([]);
+    const [addresses, setAddresses] = useState([]);
+    const [selectedAddress, setSelectedAddress] = useState({});
+    const [cards, setCards] = useState([]);
     const [selectedCard, setSelectedCard] = useState(null);
-    const [unitSelection, setUnitSelection] = useState<{ [key: number]: string }>({});
     const [paymentMethod, setPaymentMethod] = useState<'card' | 'cash'>('card');
 
     const router = useRouter();
@@ -233,7 +232,7 @@ function OrderPage() {
                     <div className="w-2/5 flex flex-col gap-5">
                         <AddressCart data={addresses} onSelectAddress={handleAddressSelection} />
                         {paymentMethod === 'card' && <CardsCart data={cards} onSelectCard={handleCartSelection} />}
-                        {/* <Coupon /> */}
+                        <Coupon />
                     </div>
                 </div>
 

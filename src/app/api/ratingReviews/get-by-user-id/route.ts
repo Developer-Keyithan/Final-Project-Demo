@@ -29,12 +29,10 @@ export const POST = async (req: NextRequest) => {
             userRatingReviews
         }, { status: 200 });
 
-    } catch (error: any) {
-        console.error("Error retrieving rating and review:", error);
-
+    } catch (error) {
         return NextResponse.json({
             message: "Error retrieving rating and review",
-            error: error.message
+            error
         }, { status: 500 });
     }
 }

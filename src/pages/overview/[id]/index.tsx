@@ -7,7 +7,6 @@ import Navbar from '../../../Components/Navbar/Navbar';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { LuLoaderCircle } from 'react-icons/lu';
 import Loader from '../../../Components/Loader/Loader';
 
 interface Product {

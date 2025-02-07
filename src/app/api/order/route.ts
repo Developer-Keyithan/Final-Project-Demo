@@ -42,8 +42,8 @@ export const POST = async (req: NextRequest) => {
 
         return NextResponse.json({ message: "Order placed successfully", newOrder }, { status: 200 });
 
-    } catch (error: any) {
-        return NextResponse.json({ message: "Failed to create order ", error: error.message }, { status: 500 });
+    } catch (error) {
+        return NextResponse.json({ message: "Failed to create order " }, { status: 500 });
     }
 };
 
@@ -78,7 +78,7 @@ export const PUT = async (req: NextRequest) => {
             return NextResponse.json({ message: "Ordered again", order }, { status: 200 });
         }
 
-    } catch (error: any) {
-        return NextResponse.json({ message: "Failed to update order ", error: error.message }, { status: 500 });
+    } catch (error) {
+        return NextResponse.json({ message: "Failed to update order " }, { status: 500 });
     }
 };

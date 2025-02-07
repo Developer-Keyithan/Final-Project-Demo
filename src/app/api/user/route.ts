@@ -8,7 +8,7 @@ import cookie from 'cookie';
 
 const JWT_SECRET = process.env.SECRET_KEY;
 
-const generateToken = (user: any): string => {
+const generateToken = (user: { _id: string; email: string; userType: string }): string => {
     return jwt.sign(
         { id: user._id, email: user.email, userType: user.userType },
         JWT_SECRET!,
@@ -64,8 +64,7 @@ export const POST = async (req: NextRequest) => {
         });
 
         return response;
-    } catch (error: any) {
-        console.error(error);
+    } catch (error) {
         return NextResponse.json(
             { message: "Sorry! Failed to create user account." },
             { status: 500 }
@@ -133,9 +132,9 @@ export const PUT = async (req: NextRequest) => {
         }
 
         return NextResponse.json({ message: 'Update successful', user: updatedUser }, { status: 200 });
-    } catch (error: any) {
+    } catch (error) {
         console.error('Error updating user:', error);
-        return NextResponse.json({ error: 'Server error', details: error.message }, { status: 500 });
+        return NextResponse.json({ error: 'Server error'}, { status: 500 });
     }
 };
 
@@ -168,8 +167,8 @@ export const DELETE = async (req: NextRequest) => {
         }
 
         return NextResponse.json({ message: 'Account deleted', user: deletedUser });
-    } catch (error: any) {
+    } catch (error) {
         console.error('Error deleting user:', error);
-        return NextResponse.json({ error: 'Server error', details: error.message }, { status: 500 });
+        return NextResponse.json({ error: 'Server error' }, { status: 500 });
     }
 };

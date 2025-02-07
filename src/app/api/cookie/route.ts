@@ -31,9 +31,9 @@ export async function GET() {
             { message: 'Token payload extracted', user: tokenPayload },
             { status: 200 }
         );
-    } catch (error: any) {
+    } catch (error) {
         return NextResponse.json(
-            { message: 'Failed to decode token', error: error.message },
+            { message: 'Failed to decode token'},
             { status: 500 }
         );
     }

@@ -18,9 +18,9 @@ const DBconnect = async () => {
             dbName: 'NextJSAPI',
             bufferCommands: true
         });
-    } catch (error: any) {
+    } catch (error) {
         console.error("MongoDB connection error:", error);
-        throw new Error("MongoDB connection error:", error);
+        throw new Error("MongoDB connection error:");
     }
 };
 

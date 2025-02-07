@@ -6,9 +6,6 @@ import Button from '../Button/Button';
 import { IoIosArrowBack, IoIosArrowForward, IoIosRemove, IoIosAdd } from "react-icons/io";
 import { IoShareSocialSharp } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa";
-import Link from 'next/link';
-import { StaticImageData } from 'next/image';
-import Image from 'next/image';
 import { useRouter } from 'next/router';
 
 interface productProps {
@@ -17,33 +14,14 @@ interface productProps {
 
 const ProductCart: React.FC<productProps> = ({ product }) => {
   const {
-    productImages,
     productName,
     productDescription,
     harvestingDate,
     agricationMethod,
-    price,
-    categories } = product
+    price } = product
 
   const newPrice = price.newPrice;
   const oldPrice = price.oldPrice;
-  // agricationMethod: "organic"
-  // categories: Array(2)
-  //    0: "chilli"
-  //    1: "organic"
-  // createdAt: "2025-01-12T06:24:04.566Z"
-  // freeDelivery: true
-  // harvestingDate: "2024-12-21T00:00:00.000Z"
-  // price: newPrice: 400
-  //        oldPrice: 300
-  // productDescription: "Pure Organic Potato"
-  // productImages: Array(2)
-  // 0: {imageUrl: 'https://pixabay.com/get/g38fff90b5ae0baae292f8020f…e8991d6876b4f6464efa1bcbbee069598d7b1a05c2dd6.jpg', _id: '67836004d374d6d8fbfaac48'}
-  // 1: {imageUrl: 'https://pixabay.com/get/g677fe63a41620b7eb0acecd9c…87a8a5ee47af0a1ce85a884b23a7d087a1cd876a85263.jpg', _id: '67836004d374d6d8fbfaac49'}
-  // productName: "Potato"
-  // updatedAt: "2025-01-12T06:57:02.028Z"
-  // userId: "678352a1fd88793f6e190449"
-  // _id: "679732e2f0d12ff2c856ab31"
 
   const [quantity, setQuantity] = useState<number>(100);
   const [unit, setUnit] = useState<'grams' | 'kilograms'>('grams');
@@ -67,10 +45,6 @@ const ProductCart: React.FC<productProps> = ({ product }) => {
 
     if (newQuantity < 0) newQuantity = 0;
     setQuantity(newQuantity);
-  };
-
-  const handleSelectUnit = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setUnit(event.target.value as 'grams' | 'kilograms');
   };
 
   const router = useRouter();

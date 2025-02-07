@@ -2,30 +2,15 @@
 
 import { useState, useEffect, JSX } from "react";
 import UserDashboard from "../../Components/User Dashboard Controller/UserDashboardController";
-import UserData from "../../Data/User";
-import AddressData from "../../Data/AddressData";
 import Delivered from "../../Components/Delivered/Delivered";
 import Cancelled from "../../Components/Cancelled/Cancelled";
-import Loader from "../../Components/Loader/Loader";
 import axios from "axios";
-import router, { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
 
-type UserDataType = {
-  id: string;
-  name: string;
-  email: string;
-  userType: string;
-  mobileNumber: number[];
-  firstName: string;
-  lastName: string;
-  updatedAt: string;
-};
-
 const DashboardPage = () => {
   const [activePanel, setActivePanel] = useState<string>("Delivered");
-  const [loading, setLoading] = useState<boolean>(true);
   const [UserData, setUserData] = useState()
 
   const router = useRouter();

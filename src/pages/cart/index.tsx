@@ -1,6 +1,5 @@
 import './style.css';
 import Navbar from '../../Components/Navbar/Navbar';
-import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { BsCartX } from 'react-icons/bs';
@@ -28,15 +27,12 @@ interface CartItem {
 function CartPage() {
     const [cartItems, setCartItems] = useState<CartItem[]>([]);
     const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false)
-    const [id, setId] = useState<string | null>(null);
-    const [loading, setLoading] = useState<boolean>(true);
     const [selectedItems, setSelectedItems] = useState<Set<string>>(new Set());
     const router = useRouter();
     console.log(cartItems)
 
     useEffect(() => {
         const fetchProduct = async () => {
-            setLoading(true);
             try {
                 const fetchUser = await axios.get('/api/cookie');
 
@@ -48,15 +44,11 @@ function CartPage() {
                     if (!userId) return;
                     if (userId) setIsLoggedIn(true)
 
-                    setId(userId);
-
                     const cartData = await axios.post('/api/cart/get-cart-by-userId', { userId });
                     setCartItems(cartData.data);
                 }
             } catch (error) {
                 console.error("Error fetching cart data:", error);
-            } finally {
-                setLoading(false);
             }
         };
 

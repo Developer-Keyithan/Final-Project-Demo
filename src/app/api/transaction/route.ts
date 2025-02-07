@@ -1,4 +1,4 @@
-import { NextApiRequest, NextApiResponse } from "next";
+import { NextApiRequest} from "next";
 import transactionModel from "../../../lib/Models/Transaction";
 import connectDB from "../../../lib/db";
 import { NextResponse } from "next/server";
@@ -25,4 +25,4 @@ export const POST = async (req: NextApiRequest) => {
     } catch (error) {
         return NextResponse.json({ message: 'Transaction failed' });
     }
-};
+}

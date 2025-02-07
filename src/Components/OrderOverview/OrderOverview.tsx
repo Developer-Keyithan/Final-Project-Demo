@@ -51,7 +51,6 @@ function OrderOverview({ products, userId, address, card, paymentMethod }: Order
     const [formattedAddress, setFormattedAddress] = useState('');
     const [maskedCardNumber, setMaskedCardNumber] = useState('');
     const [icon, setIcon] = useState<React.ReactElement | null>(null);
-    const [name, setName] = useState('');
     const [cardType, setCardType] = useState<StaticImageData | undefined>(undefined);
     const [alt, setAlt] = useState('')
 
@@ -70,13 +69,10 @@ function OrderOverview({ products, userId, address, card, paymentMethod }: Order
 
             if (address.place === 'Home') {
                 setIcon(<TiHome />);
-                setName('Home');
             } else if (address.place === 'Work Place') {
                 setIcon(<MdWork />);
-                setName('Work Place');
             } else {
                 setIcon(<FaLocationDot />);
-                setName('Undefined Delivery Address');
             }
         }
 

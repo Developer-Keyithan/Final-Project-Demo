@@ -17,7 +17,7 @@ export const POST = async (req: NextRequest) => {
             message: "Bank card retrieved successfully",
             bankCard
         }, { status: 200 });
-    } catch (error: any) {
-        return NextResponse.json({ message: "Error retrieving bank card", error: error.message }, { status: 500 });
+    } catch (error) {
+        return NextResponse.json({ message: "Error retrieving bank card", error }, { status: 500 });
     }
 };

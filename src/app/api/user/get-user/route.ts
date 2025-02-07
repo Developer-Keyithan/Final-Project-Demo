@@ -25,12 +25,10 @@ export const POST = async (req: NextRequest) => {
         message: 'Account retrieved successfully',
         user,
       });
-    } catch (error: any) {
-      console.error('Error retrieving user:', error);
+    } catch (error) {
       return NextResponse.json({
         success: false,
-        error: 'Server error',
-        details: error.message,
+        error: 'Server error'
       }, { status: 500 });
     }
   };

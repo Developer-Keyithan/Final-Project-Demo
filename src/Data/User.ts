@@ -1,12 +1,4 @@
-interface User {
-    id: String,
-    name: String,
-    email: String,
-    number: String | Number,
-    country: String
-}
-
-const UserData: User[] = [
+const UserData = [
     {   id: "U0001",
         name: "Anura Kumara Dissanayake",
         email: "kumara@gmail.com",

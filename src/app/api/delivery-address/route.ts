@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import DBconnect from '../../../lib/db';
 import DeliveryAddress from '../../../lib/Models/DeliveryAddress';
-import { Types } from 'mongoose';
 
 export const POST = async (req: NextResponse) => {
 
@@ -45,10 +44,9 @@ export const POST = async (req: NextResponse) => {
             newDeliveryAddress
         }, { status: 200 });
 
-    } catch (error: any) {
+    } catch (error) {
         return NextResponse.json({
-            message: "Error adding new delivery address",
-            error: error.message
+            message: "Error adding new delivery address"
         }, { status: 500 })
     }
 }
@@ -100,10 +98,9 @@ export const PATCH = async (req: NextResponse) => {
             updateDeliveryAddress
         }, { status: 200 });
 
-    } catch (error: any) {
+    } catch (error) {
         return NextResponse.json({
-            message: "Error updating delivery address.",
-            error: error.message
+            message: "Error updating delivery address."
         }, { status: 500 });
     };
 };
@@ -125,7 +122,7 @@ export const DELETE = async (req: NextRequest) => {
         await DeliveryAddress.findByIdAndDelete(deliveryAddressId);
         return NextResponse.json({message: "Address deleted successfully"}, {status: 200});
 
-    } catch (error: any) {
-        return NextResponse.json({message: "Can't delete delivery address", error: error.message}, {status: 500})
+    } catch (error) {
+        return NextResponse.json({message: "Can't delete delivery address" }, {status: 500})
     }
 };

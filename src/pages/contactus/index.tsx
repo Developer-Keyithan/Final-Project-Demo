@@ -18,7 +18,7 @@ const Contact: React.FC = () => {
             <div className='contact-container'>
                 <div className="contact-content-container">
                     <h1 className="contact-heading text-5xl font-semibold my-12">Contact Us</h1>
-                    <p className="contact-description">We're always happy to hear from you! Whether you have a question, need assistance, or just want to share your thoughts, we're here to help.</p>
+                    <p className="contact-description">We are always happy to hear from you! Whether you have a question, need assistance, or just want to share your thoughts, we are here to help.</p>
                     <hr />
                     <div className="contact-content">
                         <div className="contact-detail">

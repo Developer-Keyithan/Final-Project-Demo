@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-export const POST = async (req: NextRequest) => {
+export const POST = async () => {
     try {
         const response = NextResponse.json({ message: 'Logout successful' });
 
@@ -12,8 +12,7 @@ export const POST = async (req: NextRequest) => {
         });
 
         return response;
-    } catch (error: any) {
-        console.error('Error during logout:', error);
-        return NextResponse.json({ error: 'Server error', details: error.message }, { status: 500 });
+    } catch (error) {
+        return NextResponse.json({ error: 'Server error' }, { status: 500 });
     }
 };

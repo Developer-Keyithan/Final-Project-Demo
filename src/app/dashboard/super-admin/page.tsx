@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useState, JSX } from "react";
-import UserDashboard from "../../../Components/User Dashboard Controller/UserDashboardController";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import Deliveries from "../../../Components/Admins/Deliveries";
@@ -25,10 +24,7 @@ type UserDataType = {
 };
 
 const adminDashboard = () => {
-  const [UserData, setUserData] = useState<UserDataType | null>(null);
   const [activePanel, setActivePanel] = useState<string>("Users");
-
-
   const router = useRouter();
 
   useEffect(() => {
@@ -43,8 +39,6 @@ const adminDashboard = () => {
         const superAdmin = await axios.post('/api/user/get-user', {
           userId: id
         });
-
-        setUserData(superAdmin.data.user);
       }
     }
 

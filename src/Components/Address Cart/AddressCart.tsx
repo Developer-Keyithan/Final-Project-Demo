@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import { TiHome } from "react-icons/ti";
 import { MdWork } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
-import axios from 'axios';
 
 interface AddressData {
   _id: string;

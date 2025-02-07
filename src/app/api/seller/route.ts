@@ -109,8 +109,8 @@ export const POST = async (req: NextRequest) => {
 
         return NextResponse.json({ message: "Your account is successfully converted to a seller account" }, { status: 201 });
 
-    } catch (error: any) {
-        return NextResponse.json({ message: "Failed to create a seller account", error: error.message }, { status: 500 });
+    } catch (error) {
+        return NextResponse.json({ message: "Failed to create a seller account", error}, { status: 500 });
     }
 };
 
@@ -158,8 +158,8 @@ export const PATCH = async (req: NextRequest) => {
         return NextResponse.json({ message: "Seller updated successfully", seller }, { status: 200 });
 
     }
-    catch (error: any) {
-        return NextResponse.json({ message: "Error updating seller", error: error.message }, { status: 500 });
+    catch (error) {
+        return NextResponse.json({ message: "Error updating seller", error }, { status: 500 });
     }
 };
 
@@ -178,7 +178,7 @@ export const DELETE = async (req: NextRequest) => {
 
         return NextResponse.json({ message: "Seller account deleted successfully" }, { status: 200 });
 
-    } catch (error: any) {
-        return NextResponse.json({ message: "Error deleting seller", error: error.message }, { status: 500 });
+    } catch (error) {
+        return NextResponse.json({ message: "Error deleting seller", error }, { status: 500 });
     }
 };

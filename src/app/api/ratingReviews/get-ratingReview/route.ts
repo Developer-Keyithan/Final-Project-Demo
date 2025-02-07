@@ -17,7 +17,7 @@ export const POST = async (req: NextRequest) => {
             message: "Rating and review retrieved successfully",
             ratingReview
         }, { status: 200 });
-    } catch (error: any) {
-        return NextResponse.json({ message: "Error retrieving rating and review", error: error.message }, { status: 500 });
+    } catch (error) {
+        return NextResponse.json({ message: "Error retrieving rating and review", error}, { status: 500 });
     }
 };

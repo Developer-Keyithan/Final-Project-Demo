@@ -23,7 +23,7 @@ export const POST = async (req: NextRequest) => {
 
         // Merge cart items with product details
         const mergedCart = cart.map(cartItem => {
-            const product = products.find(p => (p as any)._id.toString() === cartItem.productId.toString());
+            const product = products.find((p: any) => (p)._id.toString() === cartItem.productId.toString());
             return {
                 ...cartItem,
                 productName: product?.productName || "Unknown Product",
@@ -35,8 +35,7 @@ export const POST = async (req: NextRequest) => {
         });
 
         return NextResponse.json(mergedCart, { status: 200 });
-    } catch (error: any) {
-        console.error(error.message);
-        return NextResponse.json({ message: "Failed to fetch cart", error: error.message }, { status: 500 });
+    } catch (error) {
+        return NextResponse.json({ message: "Failed to fetch cart"}, { status: 500 });
     }
 };

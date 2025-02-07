@@ -20,11 +20,8 @@ interface User {
 
 const Profile: React.FC = () => {
   const [file, setFile] = useState<File | null>(null)
-  const [uploading, setUploading] = useState(false);
-  const [preview, setPreview] = useState<string | null>(null);
   const [user, setUser] = useState<User | null>(null);
   const [id, setId] = useState<string>('')
-  const [error, setError] = useState<string | null>(null);
   const [close, setClose] = useState(false);
   const [isLogoutVisible, setIsLogoutVisible] = useState(true);
   const [isVisibleConfirm, setIsVisibleConfirm] = useState(false);
@@ -78,12 +75,10 @@ const Profile: React.FC = () => {
           setUser(fetchedUser);
           setEditedEmail(fetchedUser.email);
           setEditedMobileNumber(fetchedUser.mobileNumber.join(', '));
-          setError(null);
         }
       } catch (error) {
         const axiosError = error as AxiosError;
         if (isMounted) {
-          setError(axiosError.message || 'Failed to fetch user data');
           setUser(null);
         }
       }
@@ -130,48 +125,6 @@ const Profile: React.FC = () => {
       setIsMobileNumberEdit(false);
     }
   };
-
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files.length > 0) {
-      setFile(e.target.files[0]);
-    }
-  }
-  // const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //   const files = event.target.files;
-  //   if (!files) return;
-  //   const file = files[0];
-  //   if (file) {
-  //     const objectUrl = URL.createObjectURL(file);
-  //     setPreview(objectUrl);
-  //     setImageName(file.name)
-  //   }
-  // };
-
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    if(!file) return;
-
-    setUploading(true)
-
-    const formData = new FormData()
-    formData.append('file', file)
-
-    try {
-        const response = await fetch('/api/s3-upload' ,{
-            method: 'POST',
-            body: formData
-        })
-
-        const data = await response.json();
-        console.log(response.status)
-        setUploading(false)
-        
-    } catch (error) {
-        console.log(error)
-        setUploading(false)
-    }
-}
 
 
   if (close) return null;
@@ -220,7 +173,7 @@ const Profile: React.FC = () => {
               </div>
             )}
             <button className="absolute bottom-1 right-1 bg-white text-primaryColor ring-1 ring-primaryColor rounded-full p-2 text-[20px] hover:bg-primaryColor hover:ring-white hover:text-white transition ease-in-out duration-300 cursor-pointer">
-                <BiCamera />
+              <BiCamera />
             </button>
             {/* <form onSubmit={handleSubmit}>
                 <input type="file" accept="image/*" onChange={handleFileChange} />

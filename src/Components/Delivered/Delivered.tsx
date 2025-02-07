@@ -3,28 +3,10 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import './style.css';
-import RatingCart from '../Rating Cart/RatingCart';
 import OrderData from '../../Data/OrderData';
 import ProductData from '../../Data/ProductData';
-import CardData from '../../Data/CardData';
-import Toggle from '../Toggle/Toggle';
 
-import { FaRegHeart } from "react-icons/fa";
 import { IoStar } from "react-icons/io5";
-
-interface Card {
-  cardId: string;
-  bank: string;
-  cardNumber: string;
-}
-
-type Product = {
-  id: string;
-  name: string;
-  newPrice: string;
-  image: string;
-};
-
 type Order = {
   id: string;
   deliveredDate: string;
@@ -179,26 +161,6 @@ const DeliveredOrder: React.FC<{ data: Order }> = ({ data }) => {
           <strong>Payment Method: </strong>
           {usedPaymentMethod}
         </p>
-        {/* {Array.isArray(usedCard) && usedCard.length > 0 && usedCard.map((card, index) => {
-          const cardData = CardData.find((c) => c.id === card.cardId);
-
-          if (!cardData) {
-            return <p key={index}></p>;
-          }
-
-          return (
-            <div key={index} className="relative">
-              <p>
-                <strong>Bank name: </strong>
-                {cardData.bank}
-              </p>
-              <p>
-                <strong>Card number: </strong>
-                {cardData.cardName}
-              </p>
-            </div>
-          );
-        })} */}
 
         <p className='text-xl'>
           <strong>Total Price: </strong>

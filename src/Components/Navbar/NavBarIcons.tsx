@@ -1,4 +1,3 @@
-import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import { BiUser } from "react-icons/bi";
 import { IoCartOutline } from "react-icons/io5";
@@ -6,7 +5,6 @@ import { LuFileHeart } from "react-icons/lu";
 import { RiMoonClearFill } from "react-icons/ri";
 import CartModel from "../CartModel/CartModel";
 import WishListModel from "../WishListModel/WishListModel";
-import Link from "next/link";
 import Profile from "../Profile/Profile";
 
 interface NavBarIconsProps {

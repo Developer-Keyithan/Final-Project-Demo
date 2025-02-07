@@ -1,11 +1,4 @@
-interface Reviews {
-    id: String,
-    name: String,
-    time: String,
-    review: String
-}
-
-const ReviewData: Reviews[] = [
+const ReviewData = [
     {   id: "R0001",
         name: "Nimal",
         time: "20 Minutes",

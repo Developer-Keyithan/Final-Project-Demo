@@ -19,9 +19,9 @@ const ProductPage = () => {
       try {
         const response = await axios.get('/api/product'); // Replace with your real API endpoint
         setProducts(response.data);
-      } catch (error: any) {
+      } catch (error) {
         console.error('Error fetching products:', error);
-        setError(error.message || 'Failed to fetch products');
+        setError('Failed to fetch products');
       } finally {
         setLoading(false);
       }

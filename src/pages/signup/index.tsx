@@ -9,12 +9,8 @@ import { toast } from 'react-toastify';
 
 import { MdOutlineAccountBalanceWallet } from "react-icons/md";
 import { FaGoogle, FaFacebook, FaApple, FaTiktok } from "react-icons/fa";
-import { TiHome } from "react-icons/ti";
-import { HiMiniShoppingBag } from "react-icons/hi2";
-import { RiMoonClearFill } from "react-icons/ri";
 import { BiUser } from 'react-icons/bi';
 
-import Toggle from '../../Components/Toggle/Toggle';
 import Navbar from '../../Components/Navbar/Navbar';
 import Footer from '../../Components/Footer/Footer';
 
@@ -25,8 +21,8 @@ const SignUp = () => {
     const [mobileNumber, setMobileNumber] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
-    const [userType, setUserType] = useState('consumer');
     const [showPassword, setShowPassword] = useState(false);
+    const userType = 'consumer'
 
     const router = useRouter();
 
@@ -121,8 +117,8 @@ const SignUp = () => {
                     }
                 });
             }
-        } catch (error: any) {
-            toast.error(error.response?.data?.error || "Something went wrong.", {
+        } catch (error) {
+            toast.error("Something went wrong.", {
                 style: {
                     width: '400px',
                     height: '60px',

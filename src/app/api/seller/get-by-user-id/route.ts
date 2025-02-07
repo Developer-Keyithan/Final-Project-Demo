@@ -15,7 +15,7 @@ export const POST = async (req: NextRequest) => {
 
         return NextResponse.json(seller, { status: 200 });
 
-    } catch (error: any) {
-        return NextResponse.json({ message: "Error fetching seller", error: error.message }, { status: 500 });
+    } catch (error) {
+        return NextResponse.json({ message: "Error fetching seller", error }, { status: 500 });
     }
 };

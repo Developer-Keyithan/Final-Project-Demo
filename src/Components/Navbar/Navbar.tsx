@@ -11,7 +11,6 @@ import axios, { AxiosError } from 'axios';
 
 const Navbar: React.FC = () => {
     const [user, setUser] = useState(null);
-    const [error, setError] = useState<string | null>(null);
 
     const router = useRouter();
 
@@ -33,10 +32,8 @@ const Navbar: React.FC = () => {
                 const { data } = await axios.get('/api/cookie');
                 const response = await axios.post('/api/user/get-user', { userId: data.user.id });
                 setUser(response.data.user);
-                setError(null);
             } catch (error) {
-                const axiosError = error as AxiosError;
-                setError(axiosError.message || 'Failed to fetch user data');
+                error as AxiosError;
                 setUser(null);
             }
         };

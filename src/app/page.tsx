@@ -13,8 +13,6 @@ import { useRouter } from 'next/navigation';
 
 const LandingPage: React.FC = () => {
 
-  const [user, setUser] = useState(null); // For storing user data
-  const [error, setError] = useState<string | null>(null);
   const [products, setProducts] = useState([]);
   const [visibleProducts, setVisibleProducts] = useState(12);  // Show 12 products initially
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -39,14 +37,8 @@ const LandingPage: React.FC = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const { data } = await axios.get('/api/cookie');
-        const response = await axios.post('/api/user/get-user', { userId: data.user.id });
-        setUser(response.data.user);
-        setError(null);
       } catch (error) {
-        const axiosError = error as AxiosError;
-        setError(axiosError.message || 'Failed to fetch user data');
-        setUser(null);
+        error as AxiosError;
       }
     };
 
@@ -56,10 +48,6 @@ const LandingPage: React.FC = () => {
   const loadMoreProducts = () => {
     setVisibleProducts(visibleProducts + 12);  // Load 12 more products when clicking "Show More"
     setVisibleShowMoreBtn(false)
-  };
-
-  const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode);
   };
 
   const handleViewAll = () => {

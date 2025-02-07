@@ -2,14 +2,10 @@
 
 import { useRouter } from 'next/navigation';
 import { StaticImageData } from "next/image";
-// import './Cart.css';
 import RatingCart from '../Rating Cart/RatingCart';
-import Image from 'next/image';
-import { BiCart } from 'react-icons/bi';
 import { IoCartOutline } from 'react-icons/io5';
 import { useEffect, useState } from 'react';
 import { GoHeart, GoHeartFill } from 'react-icons/go';
-import productImage from '../../Assets/Hero.jpg'
 import axios from 'axios';
 import { toast } from 'react-toastify';
 

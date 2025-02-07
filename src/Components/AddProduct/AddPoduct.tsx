@@ -13,7 +13,7 @@ const S3UploadForm = () => {
     const [district, setDistrict] = useState<string>('');
     const [agricationMethod, setAgricationMethod] = useState<string>('');
     const [stock, setStock] = useState<string>('');
-    const [unit, setUnit] = useState<string>('');  // Default unit state
+    const [unit, setUnit] = useState<string>('');
     const [categories, setCategories] = useState<string[]>([]);
     const [harvestingDate, setHarvestingDate] = useState<string>('');
     const [product, setProduct] = useState<any>(null);

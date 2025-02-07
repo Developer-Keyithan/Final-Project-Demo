@@ -55,12 +55,11 @@ export const POST = async (req: NextRequest) => {
             product: newProduct
         }, { status: 201 });
 
-    } catch (error: any) {
+    } catch (error) {
         console.log("Error adding product:", error);
 
         return NextResponse.json({
-            message: "Error adding product",
-            error: error.message
+            message: "Error adding product"
         }, { status: 500 });
     }
 };
@@ -107,8 +106,8 @@ export const PATCH = async (req: NextRequest) => {
             product
         }, { status: 200 });
 
-    } catch (error: any) {
-        return NextResponse.json({ message: "Error updating product", error: error.message }, { status: 500 });
+    } catch (error) {
+        return NextResponse.json({ message: "Error updating product"}, { status: 500 });
     }
 };
 

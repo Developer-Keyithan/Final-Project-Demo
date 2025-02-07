@@ -6,9 +6,6 @@ import { MdClose, MdShortText } from 'react-icons/md';
 import { RiArrowDropDownLine } from 'react-icons/ri';
 
 function Products() {
-    const [editId, setEditId] = useState<string | null>(null);
-    const [visibleId, setVisibleId] = useState<string | null>(null);
-    const [hoveredButton, setHoveredButton] = useState<string | null>(null);
     const [selectedFilter, setSelectedFilter] = useState<string | null>(null);
     const [isFilterDropDownOpen, setIsFilterDropDownOpen] = useState<boolean>(false);
     const [selectedShort, setSelectedShort] = useState<string | null>(null);
@@ -34,36 +31,6 @@ function Products() {
         agricationMethod: string;
         freeDelivery: boolean;
     }
-
-    const [products, setProducts] = useState<Product[]>([]);
-    const [editedUserType, setEditedUserType] = useState<Partial<Product>>({});
-
-    // Fetch products on component mount
-    useEffect(() => {
-        const abortController = new AbortController();
-        const fetchProducts = async () => {
-            try {
-                const response = await axios.get('/api/product', {
-                    signal: abortController.signal,
-                });
-                const usersData = response.data.map((user: any) => ({
-                    ...user,
-                    createdAt: new Date(user.createdAt),
-                }));
-                setProducts(usersData);
-                setError(null);
-            } catch (error) {
-                if (!axios.isCancel(error)) {
-                    console.error("Error fetching products:", error);
-                    setError("Failed to fetch products. Please try again later.");
-                }
-            } finally {
-                setIsLoading(false);
-            }
-        };
-        fetchProducts();
-        return () => abortController.abort();
-    }, []);
 
     // Handle filter dropdown
     const handleFilterDropDown = () => setIsFilterDropDownOpen((prev) => !prev);
@@ -93,68 +60,6 @@ function Products() {
     const handleSearch = debounce((query: string) => {
         setSearchQuery(query);
     }, 300);
-
-    // Sort and filter products
-    const sortedUsers = () => {
-        let productsToDisplay = [...products];
-
-        // Filter by selected user type
-        if (selectedFilter) {
-            productsToDisplay = productsToDisplay.filter((product) => product.categories.includes(selectedFilter));
-        }
-
-        // Filter by search query (name, price, or mobile number)
-        if (searchQuery) {
-            productsToDisplay = productsToDisplay.filter((product) => {
-                const productName = product.productName.toLowerCase();
-                const price = product.price.newPrice.toString().toLowerCase();
-                const categories = product.categories.join(", ").toLowerCase();
-
-                return (
-                    productName.includes(searchQuery.toLowerCase()) ||
-                    price.includes(searchQuery.toLowerCase()) ||
-                    categories.includes(searchQuery.toLowerCase())
-                );
-            });
-
-        }
-
-        // Sort products
-        if (selectedShort === "new to old") {
-            productsToDisplay.sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
-        } else if (selectedShort === "old to new") {
-            productsToDisplay.sort((a, b) => a.createdAt.getTime() - b.createdAt.getTime());
-        }
-
-        return productsToDisplay;
-    };
-
-    const sortedUserList = sortedUsers();
-    const totalPages = Math.ceil(sortedUserList.length / usersPerPage);
-    const currentUsers = sortedUserList.slice(
-        (currentPage - 1) * usersPerPage,
-        currentPage * usersPerPage
-    );
-
-    // Handle pagination
-    const handlePageClick = (pageNumber: number) => {
-        if (pageNumber >= 1 && pageNumber <= totalPages) {
-            setCurrentPage(pageNumber);
-        }
-    };
-
-    // Handle saving edited user
-    const handleSave = async (id: string) => {
-        try {
-            await axios.put('/api/product', { _id: id, ...editedUserType });
-            setProducts(products.map((user) =>
-                user._id === id ? { ...user, ...editedUserType } : user
-            ));
-            setEditId(null);
-        } catch (error) {
-            console.error("Error updating user:", error);
-        }
-    };
 
     if (isLoading) {
         return <p>Loading products...</p>;
