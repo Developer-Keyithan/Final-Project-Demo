@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    font-family: 'Poppins';
+}
+
+.overview-container {
+    position: relative;
+}
+
+.related-products {
+    margin: 20px 0;
+}
+
+.related-products h2 {
+    margin-bottom: 30px;
+}
+
+.product-carts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    border-radius: 10px;
+}

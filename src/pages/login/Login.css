@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+  
+    --primary-color: #007546;
+    --secondary-color: #00D480;
+    --input-label-color: #D9D9D9;
+    --bg-color: #ffffff;
+    --text-color: #002718;
+    --primary-button-color: #00AD1d;
+    --secondary-button-color: #FF8000;
+    --primary-button-hover-color: #006B12;
+    --secondary-button-hover-color: #834100;
+    --cart-bg: #EFEFEF;
+    --gradient: linear-gradient(0deg, #007546, #00D480) ;
+
+    font-family: 'Poppins', sans-serif;
+}
+
+.login-content-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--primary-color);
+}
+
+.login-content {
+    padding: 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+}
+
+.login-content > h1 {
+    margin-bottom: 50px;
+    font-size: 40px;
+    color: var(--primary-color);
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-form > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 30px;
+}
+
+.number > input,
+.password > input {
+    height: 40px;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    outline: none;
+    margin-top: 5px;
+    background: #fff7;
+}
+
+.password-options {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.show-password {
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.login-btn {
+    height: 40px;
+    border-radius: 5px;
+    padding: 0 40px;
+    border: none;
+    background: var(--primary-color);
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+    transition: 0.3s ease-in-out;
+}
+
+.login-btn:hover {
+    background: var(--primary-button-hover-color);
+    cursor: pointer;
+}
+
+.api-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.login-api-btn {
+    display: flex;
+    justify-content: space-between;
+}
+
+.login-api {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 80px;
+    background: none;
+    border-radius: 5px;
+    border: 1px solid var(--primary-color);
+    outline: none;
+    color: var(--primary-color);
+    font-size: 18px;
+    transition: 0.3s ease-in-out;
+}
+
+.login-api:hover {
+    background: var(--primary-color);
+    color: var(--bg-color);
+    cursor: pointer;
+}
+
+.login-content > p {
+    margin-top: 30px;
+}

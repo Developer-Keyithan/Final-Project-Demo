@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+  
+    --primary-color: #007546;
+    --secondary-color: #00D480;
+    --input-label-color: #D9D9D9;
+    --bg-color: #ffffff;
+    --text-color: #002718;
+    --primary-button-color: #00AD1d;
+    --secondary-button-color: #FF8000;
+    --primary-button-hover-color: #006B12;
+    --secondary-button-hover-color: #834100;
+    --cart-bg: #EFEFEF;
+    --gradient: linear-gradient(0deg, #007546, #00D480) ;
+}
+
+.contact-container {
+    background: var(--primary-color);
+    padding: 20px 20px;
+    margin: 50px 240px;
+    border-radius: 15px;
+}
+
+.contact-content-container {
+    background: var(--bg-color);
+    border-radius: 10px;
+    text-align: center;
+    padding: 40px 60px 60px 60px;
+}
+
+.contact-heading {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.contact-content {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    gap: 50px;
+}
+
+.contact-detail {
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 50%;
+    padding-left: 150px;
+}
+
+.contact-detail h3 {
+    margin-bottom: 10px;
+}
+
+.contact-detail > div > div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-left: 25px;
+}
+
+.reach-us > div > p {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-detail > div > p {
+    margin-left: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: 50%;
+    gap: 10px;
+}
+
+.contact-form h3 {
+    margin-bottom: 10px;
+}
+
+.contact-form > div {
+    display: flex;
+    gap: 40px;
+    width: 490px;
+}
+
+.contact-form > div > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.input-bar {
+    width: 500px;
+    height: 40px;
+    padding: 0 20px;
+    border-radius: 20px;
+    border: none;
+    background: var(--cart-bg);
+    outline: none;
+
+}
+
+textarea {
+    padding: 15px 20px;
+    background: var(--cart-bg);
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+.contact-form button {
+    height: 40px;
+    padding: 0 30px;
+    background: var(--primary-color);
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--bg-color);
+    font-size: 16px;
+    margin-top: 40px;
+}

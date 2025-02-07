@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+
+  --primary-color: #007546;
+  --secondary-color: #00D480;
+  --input-label-color: #D9D9D9;
+  --bg-color: #ffffff;
+  --text-color: #002718;
+  --primary-button-color: #00AD1d;
+  --secondary-button-color: #FF8000;
+  --primary-button-hover-color: #006B12;
+  --secondary-button-hover-color: #834100;
+  --cart-bg: #EFEFEF;
+  --gradient: linear-gradient(0deg, #007546, #00D480);
+
+  font-family: 'Poppins', sans-serif;
+}
+
+.controller {
+  background: var(--primary-color);
+}
+
+.delivered-status {
+  color: var(--primary-color);
+}
+
+.place-again-btn {
+  background: var(--primary-color);
+}
+
+.place-again-btn:hover {
+  background: var(--primary-button-hover-color);
+}

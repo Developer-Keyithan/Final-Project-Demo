@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+  
+    --primary-color: #007546;
+    --secondary-color: #3affb0;
+    --input-label-color: #D9D9D9;
+    --bg-color: #ffffff;
+    --text-color: #002718;
+    --primary-button-color: #00AD1d;
+    --secondary-button-color: #FF8000;
+    --primary-button-hover-color: #006B12;
+    --secondary-button-hover-color: #834100;
+    --cart-bg: #EFEFEF;
+    --gradient: linear-gradient(0deg, #007546, #00D480) ;
+}
+
+.address-card-container {
+    gap: 20px;
+    box-shadow: 0 0 5px #0005;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.address-card-container h2 {
+    font-size: 18px;
+}
+
+.address-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.address-item {
+    padding: 20px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.address-item:hover {
+    transform: scale(1.03);
+}
+
+.address-item.selected {
+    border-color: var(--secondary-color);
+    background: var(--secondary-color);
+}
+
+.address-name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.address-data {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-left: 15px;
+}

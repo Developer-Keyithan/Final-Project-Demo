@@ -1,0 +1,19 @@
+* {
+    --bg-color: #ffffff;
+    --primary-button-color: #00AD1d;
+    --secondary-button-color: #FF8000;
+    --primary-button-hover-color: #006B12;
+    --secondary-button-hover-color: #834100;
+}
+
+.btn-component {
+    height: 40px;
+    padding: 0 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    color: var(--bg-color);
+}

@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+
+    --primary-color: #007546;
+    --primary-button-color: #00AD1d;
+    --primary-button-hover-color: #006B12;
+    --bg-color: #ffffff;
+}
+
+.toggle-cart {
+    z-index: 0;
+}
+
+.props-btn {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: var(--bg-color);
+    transition: 0.3s ease-in-out;
+    position: absolute;
+    top: 10px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+.props-btn:hover {
+    background: var(--primary-button-color);
+}

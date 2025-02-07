@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+  
+    --primary-color: #007546;
+    --secondary-color: #00D480;
+    --input-label-color: #D9D9D9;
+    --bg-color: #ffffff;
+    --text-color: #002718;
+    --primary-button-color: #00AD1d;
+    --secondary-button-color: #FF8000;
+    --primary-button-hover-color: #006B12;
+    --secondary-button-hover-color: #834100;
+    --cart-bg: #EFEFEF;
+    --gradient: linear-gradient(0deg, #007546, #00D480) ;
+}
+
+.chosen-product-container {
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.image {
+    width: 125px;
+    height: 125px;
+    margin-right: 15px;
+    overflow: hidden;
+}
+
+.image .img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.details {
+    flex: 1;
+}
+
+.details .sub-total-and-cancel-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    background: var(--cart-bg);
+    width: 100px;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+.controls > button {
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: none;
+    font-weight: bold;
+}
+
+.controls > button:hover {
+    background: var(--primary-color);
+    color: var(--bg-color);
+}
+
+.cancel-button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+  
+    --primary-color: #007546;
+    --secondary-color: #00D480;
+    --input-label-color: #D9D9D9;
+    --bg-color: #ffffff;
+    --text-color: #002718;
+    --primary-button-color: #00AD1d;
+    --secondary-button-color: #FF8000;
+    --primary-button-hover-color: #006B12;
+    --secondary-button-hover-color: #834100;
+    --cart-bg: #EFEFEF;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2vh;
+    padding: 1.5vw 30px 1vw 30px;
+    color: var(--bg-color);
+    background: var(--primary-color);
+    border-top: 2px solid var(--bg-color);
+}
+
+.footer-top {
+    display: grid;
+    grid-template-columns: 2fr 0.5fr 1fr 1fr;
+    gap: 20px;
+    padding: 0 1.5vw;
+    margin-top: 30px;
+}
+
+.footer-top .content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-right: 50px;
+}
+
+.footer-middle {
+    display: grid;
+    grid-template-columns: 2fr 0.5fr 2fr;
+    gap: 10px;
+    padding: 0 1.5vw;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 5px;
+}
+
+.footer-section h3 {
+    margin-bottom: 5px;
+}
+
+.footer-section a {
+    text-decoration: none;
+    color: var(--bg-color);
+}
+
+.footer-section .social-icons {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin-top: 20px;
+    font-size: 25px;
+}
+
+.news-letter>div {
+    background: var(--bg-color);
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.news-letter>div>input {
+    height: 5vh;
+    width: 80%;
+    background: none;
+    border: none;
+    outline: none;
+    padding: 15px;
+    font-size: 16px;
+    color: var(--text-color);
+}
+
+.news-letter>div>input::placeholder {
+    font-size: 16px;
+    color: #373737;
+}
+
+.news-letter>div>button {
+    height: 5vh;
+    width: 20%;
+    border-radius: 5px;
+    border: none;
+    background: var(--primary-color);
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    border-top: 2px solid var(--bg-color);
+    padding-top: 1vw;
+    text-align: center;
+}

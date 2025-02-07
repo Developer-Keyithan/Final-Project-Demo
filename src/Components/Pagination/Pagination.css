@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+
+    --primary-color: #007546;
+    --secondary-color: #00D480;
+    --input-label-color: #D9D9D9;
+    --bg-color: #ffffff;
+    --text-color: #002718;
+    --primary-button-color: #00AD1d;
+    --secondary-button-color: #FF8000;
+    --primary-button-hover-color: #006B12;
+    --secondary-button-hover-color: #834100;
+    --cart-bg: #EFEFEF;
+    --gradient: linear-gradient(90deg, #007546, #00D480);
+}
+
+.page-number-container {
+    padding:  0 60px 60px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.page-number-container button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    height: 40px;
+    padding: 0 30px;
+    border-radius: 20px;
+    border: 1px solid var(--primary-color);
+    background: none;
+    outline: none;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.page-number-container button:hover {
+    color: var(--bg-color);
+    background: var(--primary-button-color);
+    border-color: var(--primary-button-color);
+}
+
+.page-number-container .number {
+    width: 40px;
+    padding: 0 0;
+}
+
+.page-number-container .number.active {
+    background: var(--primary-color);
+    color: var(--bg-color);
+}
+
+.page-number-container .number.active:hover {
+    background: var(--primary-button-color);
+    border-color: var(--primary-button-color);
+}
+
+.dots {
+    display: flex;
+    gap: 3px;
+}
+
+.dots div {
+    width: 10px;
+    height: 10px;
+    background: var(--primary-color);
+    border-radius: 50%;
+}

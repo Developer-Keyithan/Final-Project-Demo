@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+  
+    --primary-color: #007546;
+    --secondary-color: #00D480;
+    --input-label-color: #D9D9D9;
+    --bg-color: #ffffff;
+    --text-color: #002718;
+    --primary-button-color: #00AD1d;
+    --secondary-button-color: #FF8000;
+    --primary-button-hover-color: #006B12;
+    --secondary-button-hover-color: #834100;
+    --cart-bg: #EFEFEF;
+    --gradient: linear-gradient(45deg, #007546, #00D480) ;
+}
+
+.order-overview-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px;
+    /* background: linear-gradient(90deg, var(--primary-color), var(--secondary-color)); */
+}
+
+.left-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 85%;
+    gap: 20px;
+}
+
+.chosen-coupon,
+.promo-code,
+.chosen-card,
+.chosen-address {
+    border: 1px solid var(--bg-color);
+    border-radius: 5px;
+}
+
+.chosen-coupon,
+.promo-code,
+.chosen-address {
+    padding: 20px;
+}
+
+.promo-code {
+    background: none;
+    color: var(--bg-color);
+    font-size: 16px;
+    outline: none;
+}
+
+.promo-code::placeholder {
+    color: var(--bg-color);
+}
+
+.promo-code:focus {
+    border: 2px solid var(--primary-button-hover-color);
+}
+
+.right-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 15%;
+}
+
+.right-section > p {
+    text-align: end;
+}
+
+.final-price {
+    text-align: end;
+}
+
+.order-btn {
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    color: var(--bg-color);
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.order-btn:hover {
+    background: var(--primary-button-hover-color);
+}
